@@ -21,6 +21,6 @@ spec:
         project: roboshop 
     spec:
       containers:
-      - name: mangodb
+      - name: mongodb
         image:  siraz123/mongodb:1.0.0
         
