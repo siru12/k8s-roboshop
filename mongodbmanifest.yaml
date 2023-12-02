@@ -19,7 +19,7 @@ spec:
         app: mongodb 
         tier: db 
         project: roboshop 
-    spec:
+     spec:
       containers:
       - name: mongodb
         image:  siraz123/mongodb:1.0.0
