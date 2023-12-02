@@ -9,7 +9,7 @@ metadata:
 spec:
    replica: 1 
    selector: 
-     matchLables: 
+     matchLabels: 
       app: mangodb 
       tier: db 
       project: roboshop   
