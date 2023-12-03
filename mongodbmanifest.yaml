@@ -22,7 +22,7 @@ spec:
      spec:
       containers:
       - name: mongodb
-        image:  siraz123/mongodb:1.4.4
+        image: siraz123/mongodb:1.4.4
 ---
 apiVersion: v1 
 kind: Service
@@ -34,7 +34,7 @@ spec:
     tier: db 
     project: roboshop
  ports:
-  - name: mongodb-port  
-    protocol:  TCP
-    port: 27017 # this port belongs to service
-    targetPort: 27017 # this port belongs to container
+ - name: mongodb-port  
+   protocol:  TCP
+   port: 27017 # this port belongs to service
+   targetPort: 27017 # this port belongs to container
