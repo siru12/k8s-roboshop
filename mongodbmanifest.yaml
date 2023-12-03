@@ -33,7 +33,6 @@ spec:
     app: mongodb 
     tier: db 
     project: roboshop
-  type:  LoadBalancer | ClusterIP | NodePort
  ports:
   - name: mongodb-port  
     protocol:  TCP
