@@ -17,10 +17,25 @@ spec:
      metadata:
       labels:
         app: mongodb 
-        tier: db 
+        tier: db
         project: roboshop 
      spec:
       containers:
       - name: mongodb
         image:  siraz123/mongodb:1.4.4
-        
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name:  mongodb
+spec:
+  selector:
+    app: mongodb 
+    tier: db 
+    project: roboshop
+  type:  LoadBalancer | ClusterIP | NodePort
+ ports:
+  - name: mongodb-port  
+    protocol:  TCP
+    port: 27017 # this port belongs to service
+    targetPort: 27017 # this port belongs to container
