@@ -22,5 +22,5 @@ spec:
      spec:
       containers:
       - name: mongodb
-        image:  siraz123/mongodb:1.0.0
+        image:  siraz123/mongodb:1.4.4
         
