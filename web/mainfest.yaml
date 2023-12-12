@@ -84,6 +84,9 @@ data:
             root   /usr/share/nginx/html;
         }
 
+        location /api/catalogue/ {
+          proxy_pass http://catalogue:8080/;
+    }    
         location /nginx_status {
             stub_status on;
             access_log off;
@@ -124,7 +127,7 @@ spec:
           path: nginx.conf 
     containers:
     - name: catalogue 
-      image: siraz123/web:1.0.0
+      image: siraz123/web:2.2.0
       volumeMounts:
       - name: nginx-conf
         mountPath: /etc/nginx/nginx.conf
@@ -140,7 +143,7 @@ spec:
  type: LoadBalancer
  selector:
    app: web 
-   tier: app
+   tier: web
    project: roboshop
  ports: 
  - name: web-port
