@@ -1,42 +1,42 @@
 apiVersion: apps/v1 
-kind: Deployment 
-metatdata: 
-  name: redis
-  namespace: roboshop 
-  labels: 
-    app: redis 
+kind: Deployment
+metadata:
+  name:  redis
+  namespace: roboshop
+  labels:
+    app:  redis 
     tier: db 
-    project: roboshop 
-spec: 
-  replicas: 1 
-  selector: 
-    matchLabels:
+    project: roboshop    
+spec:
+   replicas: 1 
+   selector: 
+     matchLabels: 
       app: redis 
       tier: db 
-      project: roboshop 
-  template: 
-    metadata: 
+      project: roboshop   
+   template:  
+     metadata:
       labels:
         app: redis 
-        tier: db 
-        project: roboshop
-    spec: 
+        tier: db
+        project: roboshop 
+     spec:
       containers:
-        - name: redis 
-          image: redis 
+      - name: redis
+        image: redis
 ---
 apiVersion: v1 
-kind: Service 
-metadata: 
-   name: redis 
-   namespace: roboshop
-spec: 
-   selector: 
-     app: redis 
-     tier: db 
-     project: roboshop 
-   ports: 
-   - name: redis-port 
-     protocol: TCP 
-     port: 6379
-     targetPort: 6379               
+kind: Service
+metadata:
+  name:  redis
+  namespace: roboshop
+spec:
+  selector:
+    app: redis 
+    tier: db 
+    project: roboshop
+  ports:
+  - name: redis-port  
+    protocol:  TCP
+    port: 6379 # this port belongs to service
+    targetPort: 6379 # this port belongs to container
