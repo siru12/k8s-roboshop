@@ -26,7 +26,7 @@ template:
       image: siraz123/payment:1.0.0
        envFrom: 
        - configMapRef: 
-         name: payment
+          name: payment
 ---
 apiVersion: v1 
 kind: Service 
