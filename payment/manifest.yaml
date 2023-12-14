@@ -14,7 +14,7 @@ spec:
     app: payment
     tier: app
     project: roboshop
-template: 
+ template: 
   metadata: 
    labels:
     app: payment
